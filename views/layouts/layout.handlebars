@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Rampage</title>
+    <link rel="icon" href="/user/images/logo1.png">
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/user/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/user/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/user/styles/metisMenu.css">
+    <link rel="stylesheet" href="/user/styles/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/user/styles/helper.css">
+    <link rel="stylesheet" href="/user/styles/owl.carousel.css">
+    <link rel="stylesheet" href="/user/styles/owl.theme.css">
+    <link rel="stylesheet" href="/user/styles/owl.transitions.css">
+    <link rel="stylesheet" href="/user/styles/purple.css">
+    <link rel="stylesheet" href="/user/styles/animate.css">
+    <link rel="stylesheet" href="/user/styles/timeline.css">
+    <link rel="stylesheet" href="/user/styles/my-prof.css">
+
+    <link rel="apple-touch-icon" href="/admin/images/favicon.png">
+    <link rel="icon" href="/admin/images/favicon.png">
+
+
+</head>
+
+<body>
+{{>userNav}}
+
+
+{{{body}}}
+{{>footer}}
+
+
+<script src="/user/js/dependencies/sails.io.js"></script>
+<script src="/user/js/dependencies/jquery-1.11.3.min.js"></script>
+<script src="/user/js/dependencies/metisMenu.js"></script>
+<script src="/user/js/bootstrap.js"></script>
+<script src="/user/js/icheck.min.js"></script>
+<script src="/user/js/owl.carousel.min.js"></script>
+<script src="/user/js/my-prof.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        if (window.location.pathname === '/') {
+
+            $(function () {
+                $('body').scrollspy({
+                    target: "#navbar-collapse",
+                    offset: 50
+                });
+
+                // Add smooth scrolling to all links inside a navbar
+                $("#navbar-collapse a").on('click', function (event) {
+
+                    // Prevent default anchor click behavior
+                    //event.preventDefault();
+
+                    // Store hash (#)
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                });
+            });
+
+        }
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#loginBanner").owlCarousel({
+            autoPlay: true,
+            items: 1,
+            itemsDesktop: [1199, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            itemsMobile: [479, 1]
+        });
+    });
+</script>
+
+<script>
+    var min = new Date().getFullYear()+1,
+            max = min + 9,
+            select = document.getElementById('selectElementId');
+
+    for (var i = min; i<=max; i++){
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        select.appendChild(opt);
+    }
+
+</script>
+
+
+</body>
+</html>

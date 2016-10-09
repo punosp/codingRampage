@@ -1,0 +1,237 @@
+/*
+    Document   : my-prof
+    Created on : 6 Feb, 2016, 11:21:59 PM
+    Author     : divyshrivastava
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.intro {
+  background: url(../images/6.jpg);
+
+}
+p,label,h3 {
+  font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+#list {
+  margin-top: 10px;
+}
+div {
+  word-wrap: break-word;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    position: relative;
+}
+
+h1, h2, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.font-light { font-weight: 300; }
+.font-ultra { font-weight: 900; }
+strong, .strong { font-weight: 500; }
+
+a { color: #9b59b6; }
+a:hover, a:focus { color: #a86ebf; }
+
+/* Helper */
+.minheight { min-height: 500px; }
+.m25 { margin: 25px; }
+.btn-round { border-radius: 30px; }
+.bg-tile {
+    background-color: #fff;
+    background-image: url('../images/cubes.png');
+    background-position: center center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+.bg-gradient {
+    background: rgba(255,255,255,.90);
+    background: linear-gradient(to bottom,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,.9) 10%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,.9) 90%,
+        rgba(255,255,255,1) 100%
+        );
+}
+.bg-graph {
+    background: transparent url('../images/graph.png') left bottom repeat-x;
+}
+.border-bottom-purple { border-bottom: 1px solid #AA71C1; }
+.bg-blue { background: #3498db; color: #FFF; }
+.bg-green { background: #62cb31; color: #FFF; }
+.bg-yellow { background: #ffb606; color: #FFF; }
+.bg-orange { background: #e67e22; color: #FFF; }
+.bg-blue .icon-container > i { color: #3498db; }
+.bg-green .icon-container > i { color: #62cb31; }
+.bg-yellow .icon-container > i { color: #ffb606; }
+.bg-orange .icon-container > i { color: #e67e22; }
+.section-padding { padding: 100px 0 50px;}
+.section-high { box-shadow: 0 3px 2px 1px rgba(0,0,0,.1); }
+.section-title {
+    padding: 0 0 10px;
+    margin: 0 0 20px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+.section-title:after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: #888;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: -1px 0 0 -50px;
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
+}
+.section-title > span { color: #9b59b6; }
+.section-title-text { font-weight: 300; color: rgba(0,0,0,.57); text-align: center; margin: 0 0 20px; font-size: 18px; }
+
+/* Top Links */
+.navbar-brand {
+    padding: 10px 20px;
+    height: 60px;
+}
+.navbar-brand > img { height: 40px; }
+.navbar-default .navbar-nav > li > a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #34495e;
+    height: 60px;
+    padding: 25px 10px 10px;
+    border-bottom: 5px solid transparent !important;
+}
+.navbar-default .navbar-nav > li { padding: 0 10px; }
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background: transparent;
+    border-color: #9b59b6 !important;
+}
+.login-link { color: #FFF !important; background: #9b59b6 !important; }
+.login-link.login-link-image { padding: 10px 10px 5px !important; line-height: 30px; }
+.login-link.login-link-image img { height: 40px; width: 40px; margin-right: 10px; border-radius: 20px; }
+.sign-up-link { color: #9b59b6 !important; }
+.dropdown-menu > li > a { padding: 15px 20px; }
+.navbar-nav > li > .dropdown-menu { margin-top: -2px; }
+
+/* Footer */
+.footer-bottom {
+    background: #121212;
+    color: #a0a0a0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.footer-bottom a {
+    color: #a0a0a0;
+}
+
+/* Why Point */
+.why-point {
+    text-align: center;
+    margin: 15px 0;
+    padding: 30px 15px;
+    border-radius: 30px;
+    font-weight: 400;
+}
+.why-point > h4 {
+    text-transform: uppercase;
+}
+.why-point > .icon-container {
+    background: #fff;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 35px;
+    margin: 20px auto 30px;
+}
+
+/* How */
+.how-container { margin: 0; padding: 60px 0; position: relative; }
+.how-container:after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 1px;
+    width: 50%;
+    background: #e0e0e0;
+    margin-left: -25%;
+}
+.how-container:last-child:after {
+    background: transparent;
+}
+.how-container h3 { color: rgba(0,0,0,.84); margin: 10px 0 10px; line-height: 30px; position: relative; padding: 10px 0 10px 60px; }
+.how-container h3 > span {
+    position: absolute; top: 0; left: 0; margin: 0;
+    display: block; height: 50px; width: 50px;
+    border-radius: 50%; font-weight: 300;
+    font-size: 18px; line-height: 20px; padding: 15px 0; text-align: center;
+}
+.how-container p { padding-left: 60px; }
+
+/* Get Started */
+.bg-get-started {
+    color: #fff;
+    background-color: #121212;
+    background-image: url('../images/get-started.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Logo Holder */
+.logo-holder { margin-bottom: 75px; }
+.logo-holder img { height: 60px; }
+
+/* Box */
+.box {
+    background: #FFF;
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid #f6f8fa;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.12);
+}
+
+/* Form Styling */
+label { font-weight: 300; margin: 10px 0 0; }
+.radio label, .checkbox label { font-weight: 300; padding-left: 0; }
+.form-control {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    font-weight: 400;
+    border-bottom: 1px solid #666;
+    box-shadow: none;
+    color: #121212;
+    margin-bottom: 1px;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-width: 2px;
+    margin-bottom: 0;
+}
+
+.form-control::-webkit-input-placeholder { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control::-moz-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control:-ms-input-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control:-moz-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+
+/* Banner */
+.login-banner { padding: 10px 50px; }
+.login-banner .jumbotron { margin: 0; border-radius: 30px; text-align: center; }
+.login-banner .icon-container { height: 150px; width: 150px; padding-top: 35px; background: #f0f0f0; text-align: center; border-radius: 50%; margin: 0 auto; }
+
+

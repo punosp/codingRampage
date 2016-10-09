@@ -1,0 +1,217 @@
+/*
+    Document   : my-prof
+    Created on : 6 Feb, 2016, 11:21:59 PM
+    Author     : divyshrivastava
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#subCategories {
+
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.ui-autocomplete {
+  max-height: 200px;
+  max-width : 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  /* add padding to account for vertical scrollbar */
+  padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+  height: 100px;
+  width: 100px;
+}
+
+#chart-tags {
+  overflow-x: auto;
+  background: lightgrey;
+}
+
+div {
+  word-wrap: break-word;
+}
+.row {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+.panel-default {
+  margin-top: 40px;
+}
+
+
+.jumbotron {
+  padding: 10px;
+  margin-top: 40px;
+  text-transform: uppercase;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.font-light { font-weight: 300; }
+.font-ultra { font-weight: 900; }
+strong, .strong { font-weight: 500; }
+
+
+
+
+/* Helper */
+.minheight { min-height: 500px; }
+.m25 { margin: 25px; }
+.btn-round { border-radius: 30px; }
+
+
+
+
+.section-padding { padding: 100px 0 50px;}
+.section-high { box-shadow: 0 3px 2px 1px rgba(0,0,0,.1); }
+.section-title {
+  padding: 0 0 10px;
+  margin: 40px 0 20px;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.1);
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+.section-title:after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: #888;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin: -1px 0 0 -50px;
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
+}
+.section-title > span { color: #9b59b6; }
+.section-title-text { font-weight: 300; color: rgba(0,0,0,.57); text-align: center; margin: 0 0 20px; font-size: 18px; }
+
+/* Top Links */
+
+.login-link { color: #FFF !important; background: #9b59b6 !important; }
+.login-link.login-link-image { padding: 10px 10px 5px !important; line-height: 30px; }
+.login-link.login-link-image img { height: 40px; width: 40px; margin-right: 10px; border-radius: 20px; }
+.sign-up-link { color: #9b59b6 !important; }
+
+
+/* Footer */
+.footer-bottom {
+  background: #121212;
+  color: #a0a0a0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.footer-bottom a {
+  color: #a0a0a0;
+}
+
+
+
+/* Logo Holder */
+.logo-holder { margin-bottom: 75px; }
+.logo-holder img { height: 60px; }
+
+/* Box */
+.box {
+  background: #FFF;
+  padding: 30px;
+  border-radius: 30px;
+  border: 1px solid #f6f8fa;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.12);
+}
+
+/* Form Styling */
+label { font-weight: 300; margin: 10px 0 0; }
+.radio label, .checkbox label { font-weight: 300; padding-left: 0; }
+.form-control {
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+  font-weight: 400;
+  border-bottom: 1px solid #666;
+  box-shadow: none;
+
+  margin-bottom: 1px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-bottom-width: 2px;
+  margin-bottom: 0;
+}
+
+.form-control::-webkit-input-placeholder { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control::-moz-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control:-ms-input-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+.form-control:-moz-placeholder  { color: #d0d0d0; font-weight: 300; opacity: 1; }
+
+/* Banner */
+.login-banner { padding: 10px 50px; }
+.login-banner .jumbotron { margin: 0; border-radius: 30px; text-align: center; }
+.login-banner .icon-container { height: 150px; width: 150px; padding-top: 35px; background: #f0f0f0; text-align: center; border-radius: 50%; margin: 0 auto; }
+/* table*/
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+}
+
+.th-config {
+  width: 200px;
+}
+table#confirm-test-config th{
+  text-align: left;
+}
+
+
+
+#page-wrapper {
+  margin-top: 30px !important;
+}
+#admin {
+  margin-top: 30px; !important;
+}
+
+/*Media Queries*/
+@media only screen and (max-width: 768px) {
+  #page-wrapper {
+    margin-top: 80px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    margin-top: 66px;
+  }
+}
+
+.navbar {
+  min-height: 65px;
+
+}
+
+.navbar-top-links li a {
+  padding: 20px;
+  min-height: 65px;
+}
