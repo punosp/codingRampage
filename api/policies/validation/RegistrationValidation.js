@@ -4,7 +4,6 @@
 var form = require('express-form'),
   field = form.field,
   validate = form.validate;
-
 module.exports = form(
   field('name'),
   field('email'),

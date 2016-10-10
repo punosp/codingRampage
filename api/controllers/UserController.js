@@ -88,7 +88,9 @@ function registerNewUserAction(req, res) {
       //User.sendActivationMail(user);
 
 
-      req.flash('message', "You have been successfully registered");
+      req.flash('message', "You have been successfully registered." +
+        "Contest details will shared via email through Hackerearth");
+
 
       return res.redirect("/user/new/register");
     })
