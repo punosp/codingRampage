@@ -1,0 +1,63 @@
+<div id="page-wrapper" xmlns="http://www.w3.org/1999/html">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="admin">
+                <div class="col-lg-12">
+                  {{#if message}}
+                      <div class="alert alert-success" role="alert">
+                        {{#each message}}
+
+                            <p>{{this}}</p>
+
+                        {{/each}}
+                      </div>
+                  {{/if}}
+
+                  {{#if errors}}
+                      <div class="alert alert-danger" role="alert">
+                        {{#each errors}}
+
+                            <p>{{this}}</p>
+
+                        {{/each}}
+                      </div>
+                  {{/if}}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4><b>User Details</b></h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class=" col-lg-2"><h5> Name : </h5></div><div class="col-lg-10"><h5><b> {{ user.name }}</b></h5></div>
+
+                            <div class=" col-lg-2"><h5> Email Id : </h5></div><div class="col-lg-10"><h5><b> {{ user.email }}</b></h5></div>
+                            <div class=" col-lg-2"><h5>Phone No : </h5></div><div class="col-lg-10"><h5><b> {{ user.phone }}</b></h5></div>
+                            <div class=" col-lg-2"><h5>College : </h5></div><div class="col-lg-10"><h5><b> {{ user.college }}</b></h5></div>
+                            <div class=" col-lg-2"><h5>College : </h5></div><div class="col-lg-10"><h5><b> {{ user.passYear }}</b></h5></div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+
+    <!-- Trigger the modal with a button -->
+
+    <!-- Modal -->
+
+
+
+    <!-- /#page-wrapper -->
+
+
+</div>

@@ -1,11 +1,7 @@
 <div class="intro">
 <section class="section-padding">
-
-
     <div class="container">
-
-            <div class="row">
-
+        <div class="row">
             <div class="col-md-8 hidden-xs">
               {{#if message}}
                   <div class="alert alert-success" role="alert">
@@ -26,6 +22,15 @@
                     {{/each}}
                   </div>
               {{/if}}
+              {{#if alert}}
+                  <div class="alert alert-info" role="alert">
+                    {{#each alert}}
+
+                        <p>{{this}}</p>
+
+                    {{/each}}
+                  </div>
+              {{/if}}
                 <div class="login-banner" id="loginBanner">
                     <div class="jumbotron bg-blue" style="background: transparent; color: black;">
                         <div class="icon-container">
@@ -36,7 +41,7 @@
                     </div>
                     <div class="jumbotron bg-green" style="background: transparent; color: black;">
                         <div class="icon-container">
-                            <i class="pe-7s-timer pe-5x pe-va pe-fw"></i>
+                            <i class="pe-7s-hammer pe-5x pe-va pe-fw"></i>
                         </div>
                         <h1>Rampage</h1>
                         <p>Intensive coding for 12 hours.</p>
@@ -57,50 +62,39 @@
                     </div>
                 </div>
                 <div class="text-center" style="color: black; font-size: 40px;">
-                     Starts at 18<sup>th</sup> Oct 6:00pm.
+                    Starts at 18<sup>th</sup> Oct 6:00pm.
                 </div>
             </div>
             <div class="col-md-4">
+                <h3 class="section-title">Login</h3>
+                <ul>
+                  {{#each errors}}
+                      <li>
+                        {{this}}
+                      </li>
+                  {{/each}}
+                </ul>
+                <form action="/user/login" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control input-lg" id="inputEmail"
+                               placeholder=" e.g. name@example.com ..." name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control input-lg" id="inputPassword"
+                               placeholder=" e.g. myStrongPassword" name="password">
+                    </div>
 
-                <h3 class="section-title" style="color: black">Sign Up</h3>
-                <form action="/user/register" method="post">
-                    <div class="form-group">
-                        <label for="inputName" style="color: black">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder=" e.g. Rahul ..." name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail" style="color: black">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder=" e.g. name@example.com ..."
-                               name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phoneNo" style="color: black">Contact No.</label>
-                        <input type="number" class="form-control" id="phoneNo" placeholder=" e.g. 9430067326"
-                               name="phone" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="college" style="color: black">College/University</label>
-                        <input type="tect" class="form-control" id="university"
-                               placeholder=" e.g. DIT University" name="college" required>
-                    </div>
-                    <div class="form-group" >
-                        <label for="year-of-pasing" style="color: black">Passing Year</label>
-                        <select id="selectElementId" class="form-control" name="passYear">
-                            <option disabled selected value>Select Passing Year</option>
-
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block btn-lg">REGISTER</button>
+                    <button type="submit" class="btn btn-success btn-block btn-lg">LOGIN</button>
                     <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
                 </form>
-
             </div>
         </div>
     </div>
-
 </section>
+
+
 </div>
-
-
 
 

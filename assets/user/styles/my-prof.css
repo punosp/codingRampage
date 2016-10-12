@@ -7,7 +7,7 @@
 */
 
 .intro {
-  background: url(../images/6.jpg);
+  background: url(../images/asd.jpg);
 
 }
 p,label,h3 {
@@ -106,7 +106,7 @@ a:hover, a:focus { color: #a86ebf; }
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
-    color: #34495e;
+    color: black;
     height: 60px;
     padding: 25px 10px 10px;
     border-bottom: 5px solid transparent !important;
@@ -130,7 +130,7 @@ a:hover, a:focus { color: #a86ebf; }
     background: #121212;
     color: #a0a0a0;
     font-size: 12px;
-    text-transform: uppercase;
+   /* text-transform: uppercase;*/
 }
 .footer-bottom a {
     color: #a0a0a0;
@@ -182,15 +182,7 @@ a:hover, a:focus { color: #a86ebf; }
 .how-container p { padding-left: 60px; }
 
 /* Get Started */
-.bg-get-started {
-    color: #fff;
-    background-color: #121212;
-    background-image: url('../images/get-started.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
+
 
 /* Logo Holder */
 .logo-holder { margin-bottom: 75px; }

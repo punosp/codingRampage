@@ -14,11 +14,11 @@ module.exports = {
     rest: false
   },
 
-    registerNewUser: registerNewUserAction,
-   registerUser: registerUserAction
-
-
-
+  registerNewUser: registerNewUserAction,
+  registerUser: registerUserAction,
+  loginNewUser: loginNewUserAction,
+  loginUser: loginUserAction,
+  logoutUser: logoutUserAction
 }
 
 
@@ -73,4 +73,48 @@ function registerNewUserAction(req, res) {
     });
 }
 
+function loginNewUserAction(req, res) {
+  if(req.user)
+  {
+    if(req.user.role.name == 'ROLE_ADMIN')
+    {
+      res.redirect('/admin/dashBoard');
+    }
+  }
+  else {
+    res.view("user/new/login", {
+      alert: req.flash("alert"),
+      message: req.flash("message"),
+      errors: req.flash("errors"),
+      layout: 'layout'
+    });
+  }
 
+}
+
+function loginUserAction(req, res) {
+  // check for user role
+  // if admin
+  // redirect to /admin
+  // if user
+  // redirect to /app
+
+  if (req.user.role.name == 'ROLE_ADMIN') {
+    console.log("hi");
+    return res.redirect('/admin/dashBoard');
+  }
+  else
+  {
+    req.logout();
+
+    res.redirect('/user/new/login');
+  }
+}
+
+function logoutUserAction(req, res) {
+
+  req.logout();
+  req.flash("message", 'Successfully logged out!');
+  res.redirect('/user/new/login');
+
+}

@@ -49,9 +49,14 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
 
+  AdminController: {
+    dashBoard: ["isAuthenticated","isAdminRole"],
+    showAllUsers: ["isAuthenticated","isAdminRole"],
+    showUser: ["isAuthenticated","isAdminRole"]
+  },
   UserController: {
-    registerUser: ["validation/RegistrationValidation"]
-
+    registerUser: ["validation/RegistrationValidation"],
+    loginUser: ["validation/LoginValidation", "UserLoginCheck", "LocalLogin"],
 
   }
 };
