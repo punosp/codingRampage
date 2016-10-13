@@ -12,5 +12,9 @@ module.exports.routes = {
   'get /admin/user/list': {
     controller: 'AdminController',
     action: 'showAllUsers'
+  },
+  'post /admin/user/:userId/status': {
+    controller: 'AdminController',
+    action: 'updateStatus'
   }
 };

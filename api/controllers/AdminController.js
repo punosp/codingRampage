@@ -17,7 +17,8 @@ module.exports = {
   },
   showUser: showUserAction,
   showAllUsers: showAllUsersAction,
-  dashBoard: dashBoardAction
+  dashBoard: dashBoardAction,
+  updateStatus: updateStatusAction
 };
 function dashBoardAction(req, res) {
   User
@@ -50,6 +51,7 @@ function showAllUsersAction(req, res) {
         message: req.flash("message"),
         users: users,
         errors: req.flash("errors"),
+        data: JSON.stringify(users),
         layout: 'adminLayout'
       });
     })
@@ -99,5 +101,25 @@ function showUserAction(req, res) {
       res.redirect('/admin/user/list');
     });
 
+
+}
+
+function updateStatusAction(req, res) {
+
+  var state = req.param('status');
+console.log(state);
+  User
+    .updateInviteStateForUser(req.param('userId'),state)
+    .then(function () {
+      return res.send('success');
+    })
+
+    .catch(function(err) {
+      var errors = err.message;
+
+
+
+      return res.send(errors);
+    });
 
 }

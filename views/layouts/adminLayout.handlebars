@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/admin/styles/sb-admin-2.css">
     <link rel="stylesheet" href="/admin/styles/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="/admin/styles/my-prof.css">
-
+    <link rel="stylesheet" href="/admin/styles/bootstrap-switch.css">
     <link rel="apple-touch-icon" href="/admin/images/favicon.png">
 </head>
 
@@ -83,6 +83,7 @@
 <script src="/admin/js/sb-admin-2.js"></script>
 <script src="/admin/js/jquery.dataTables.min.js"></script>
 <script src="/admin/js/dataTables.bootstrap.min.js"></script>
+<script src="/admin/js/bootstrap-switch.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -90,6 +91,47 @@
     } );
 
 
+</script>
+
+<script>
+    var init;
+    $(document).ready(function() {
+        var initData = $('#initial-configData').val();
+
+        init = JSON.parse(initData);
+        $.fn.bootstrapSwitch.defaults.onText = 'Yes';
+        $.fn.bootstrapSwitch.defaults.offText = 'No';
+
+        init.forEach(function (index, item) {
+            console.log(index.id);
+
+            $("input#publish-state" + index.id).bootstrapSwitch();
+            $("input#publish-state" + index.id).on('switchChange.bootstrapSwitch', function (event, state) {
+
+                var id = $('#publish-state' + index.id).val();
+                console.log(state); // true | false
+                $.post("/admin/user/" + id + "/status", {status: state}, function (result) {
+
+                    console.log(result);
+                    if (result == 'success') {
+                        window.location.replace("/admin/user/list");
+                    }
+                    else {
+                        window.location.replace("/admin/dashBoard");
+                    }
+
+                });
+            });
+        })
+
+
+
+
+
+
+
+
+    });
 </script>
 
 </body>

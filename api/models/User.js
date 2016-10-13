@@ -52,7 +52,11 @@ module.exports = {
       type: 'boolean',
       columnName: 'is_LoggedIn',
       defaultsTo: false
-    }
+    },
+    status: {
+      type: 'boolean',
+      defaultsTo: false
+    },
   },
   registerUser: registerUser,
   loadUserByEmail: loadUserByEmail,
@@ -60,7 +64,8 @@ module.exports = {
   getForEmailPasswordV2: getForEmailPasswordV2,
   getAllUsers: getAllUsers,
   getCountUser: getCountUser,
-  getUserForId: getUserForId
+  getUserForId: getUserForId,
+  updateInviteStateForUser: updateInviteStateForUser
 };
 
 function loadUserByEmail(email) {
@@ -313,4 +318,32 @@ function getUserForId(userId) {
         });
       });
   });
+}
+
+function updateInviteStateForUser(id,state) {
+  return Q.promise(function (resolve, reject) {
+    var updateCriteria = {
+      id: id,
+      isDeleted: false,
+      isActive: true
+    };
+    var updateData = {
+      status : state
+    };
+    User
+      .update(updateCriteria, updateData)
+      .then(function (users) {
+        console.log(users[0]);
+        return resolve();
+      })
+      .catch(function (err) {
+        sails.log.verbose('Test#updatePublishedStateForTest :: query failed :: ', err);
+        return reject({
+          code: 500,
+          message: 'INTERNAL_SERVER_ERROR'
+        });
+      })
+
+  });
+
 }
