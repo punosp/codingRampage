@@ -18,7 +18,8 @@ module.exports = {
   registerUser: registerUserAction,
   loginNewUser: loginNewUserAction,
   loginUser: loginUserAction,
-  logoutUser: logoutUserAction
+  logoutUser: logoutUserAction,
+  successUser: successUserAction
 }
 
 
@@ -57,10 +58,10 @@ function registerNewUserAction(req, res) {
       //User.sendActivationMail(user);
 
 
-      req.flash('message', "You have been successfully registered." +
-        "Contest details will shared via email through Hackerearth");
+      // req.flash('message', "You have been successfully registered." +
+      //   "Contest details will shared via email through Hackerearth");
 
-      return res.redirect("/user/new/register");
+      return res.redirect("/user/new/success");
     })
     .catch(function (err) {
       sails.log.error('UserController#registerAction :: Error registering user :: ', err);
@@ -117,4 +118,10 @@ function logoutUserAction(req, res) {
   req.flash("message", 'Successfully logged out!');
   res.redirect('/user/new/login');
 
+}
+
+function successUserAction(req, res) {
+  res.view("user/new/success", {
+    layout: 'layout'
+  });
 }

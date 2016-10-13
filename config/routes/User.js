@@ -21,4 +21,8 @@ module.exports.routes = {
     controller: 'UserController',
     action: 'logoutUser'
   },
+  'get /user/new/success': {
+    controller: 'UserController',
+    action: 'successUser'
+  },
 };
