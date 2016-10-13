@@ -262,7 +262,8 @@ function getAllUsers() {
     User
       .find()
       .populate('role')
-      // success block
+      .sort({createdAt: 'desc'})
+    // success block
       .then(function(users) {
         // do other tasks with new admin
         return resolve(users);
