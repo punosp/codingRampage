@@ -86,19 +86,14 @@
 <script src="/admin/js/bootstrap-switch.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $('#table-demo').DataTable();
-    } );
-
-
-</script>
-
-<script>
     var init;
     $(document).ready(function() {
+        $('#table-demo').DataTable();
+
         var initData = $('#initial-configData').val();
 
         init = JSON.parse(initData);
+
         $.fn.bootstrapSwitch.defaults.onText = 'Yes';
         $.fn.bootstrapSwitch.defaults.offText = 'No';
 
@@ -122,16 +117,36 @@
 
                 });
             });
-        })
+        });
+    $('#table-demo').on( 'draw.dt', function () {
 
 
 
 
+        init.forEach(function (index, item) {
+            console.log(index.id);
 
+            $("input#publish-state" + index.id).bootstrapSwitch();
+            $("input#publish-state" + index.id).on('switchChange.bootstrapSwitch', function (event, state) {
 
+                var id = $('#publish-state' + index.id).val();
+                console.log(state); // true | false
+                $.post("/admin/user/" + id + "/status", {status: state}, function (result) {
 
+                    console.log(result);
+                    if (result == 'success') {
+                        window.location.replace("/admin/user/list");
+                    }
+                    else {
+                        window.location.replace("/admin/dashBoard");
+                    }
 
-    });
+                });
+            });
+        });
+
+    } );
+    } );
 </script>
 
 </body>
